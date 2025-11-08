@@ -1,0 +1,114 @@
+:root {
+  /* Cores Primárias */
+  --primary: #4b97c0; /* Primária 01 */
+  --primary-dark: #144425; /* Primária 02 */
+
+  /* Cores Secundárias */
+  --secondary: #46953d; /* Secundária 01 */
+  --secondary-light: #b5d984; /* Secundária 02 */
+
+  /* Cores Neutras / de apoio */
+  --neutral-1: #82d1c5; /* Neutra */
+  --accent: #47a976; /* Gradiente / destaque */
+
+  /* Destaques */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Utilitárias */
+  --shadow: rgba(0, 0, 0, 0.18);
+  --button-gradient: linear-gradient(135deg, #78d75b 0%, #47a976 50%, #4f86b4 100%);
+}
+
+/* exemplo de uso:
+.element { background: var(--photo-gradient); }
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 72px;
+  background-color: var(--secondary-light);
+}
+
+.home-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 8px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  gap: 24px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  transition: color 1s ease;
+}
+
+/* underline animated via pseudo-element for smooth transition */
+.navbar-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--primary-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.navbar-links li a:hover,
+.navbar-links li a:focus {
+  color: var(--primary-dark);
+}
+
+.navbar-links li a:hover::after,
+.navbar-links li a:focus::after {
+  transform: scaleX(1);
+}
+
+.login-area {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 12px;
+}
+
+.login-area button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-dark);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: background 0.3s ease;
+}
+
+.login-area button:hover {
+  background: var(--primary);
+  color: var(--black);
+}
