@@ -155,12 +155,11 @@ aside {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: 120px;
 }
 
 .image-container img {
-  width: 660px;
-  height: auto;
-  margin-top: 112px;
+  margin-top: 80px;
 }
 
 .main-text {
@@ -234,4 +233,28 @@ aside {
 }
 .plans:active {
   transform: scale(0.95);
+}
+
+.statistics-container {
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 32px;
+}
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.statistics-numbers {
+  font-size: var(--subtitle-text);
+  color: var(--primary-dark);
+}
+
+.statistics-infos {
+  font-size: var(--info-text);
+  color: var(--secondary-light);
 }
