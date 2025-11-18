@@ -258,3 +258,96 @@ aside {
   font-size: var(--info-text);
   color: var(--secondary-light);
 }
+
+footer {
+  padding: 32px 0;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: var(--small-text);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  gap: 16px;
+}
+.footer-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-us-footer {
+  max-width: 350px;
+}
+
+.quick-links {
+  display: flex;
+  gap: 16px;
+}
+
+/* Corrigido: .quick-links já é o <ul>, então selecionar os <li> filhos diretamente */
+.quick-links > li:first-child {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* garantir que o texto "Links Rápidos" (âncora) use mesma cor/formatação de .contact-info > li:first-child */
+.quick-links > li:first-child,
+.quick-links > li:first-child a {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.quick-links li a {
+  text-decoration: none;
+  color: var(--black);
+  transition: color 0.3s ease;
+}
+
+.contact-info {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-info > li:first-child {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.contact-info li a {
+  text-decoration: none;
+  color: var(--black);
+  transition: color 0.3s ease;
+  display: flex;
+  gap: 8px;
+}
+
+.reserved-rights {
+  margin-top: 32px;
+  text-align: center;
+  font-size: var(--small-text);
+}
+
+.reserved-rights img {
+  display: inline;
+  vertical-align: middle;
+  margin: 0px 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.reserved-text {
+  margin-bottom: 8px;
+}
