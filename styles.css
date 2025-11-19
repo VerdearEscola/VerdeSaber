@@ -1,6 +1,7 @@
 :root {
   /* Cores Primárias */
   --primary: #4b97c0; /* Primária 01 */
+  --primary-light: #4f86b4;
   --primary-dark: #144425; /* Primária 02 */
 
   /* Cores Secundárias */
@@ -11,6 +12,7 @@
   /* Cores Neutras / de apoio */
   --neutral: #e1e7ef; /* Neutra */
   --accent: #47a976; /* Gradiente / destaque */
+  --accent-light: #78d75b;
 
   /* Destaques */
   --white: #ffffff;
@@ -118,6 +120,11 @@ nav {
   cursor: pointer;
   box-shadow: 0 4px 6px var(--shadow);
   transition: background 0.3s ease;
+}
+
+.login-area button a {
+  text-decoration: none;
+  color: var(--white);
 }
 
 .login-area button:hover {
@@ -450,4 +457,147 @@ footer {
 
 .reserved-text {
   margin-bottom: 8px;
+}
+
+.container-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+h3 {
+  color: var(--primary-light);
+  font-size: var(--info-text);
+}
+
+.benefit-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.benefit-title {
+  font-size: var(--subtitle-text);
+  color: var(--primary-light);
+}
+
+.benefit-desc {
+  text-align: center;
+  max-width: 600px;
+}
+
+.cards-row {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 400px;
+  height: 250px;
+  border-radius: 16px;
+  padding: 48px;
+  border: 1px solid var(--accent-light);
+}
+
+.card p {
+  max-width: 300px;
+}
+
+.card img {
+  stroke: var(--secondary-medium) !important;
+}
+
+.primary-cta {
+  margin-top: 48px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  background: var(--button-gradient);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow);
+  font-size: var(--small-text);
+  transition: transform 0.2s ease;
+}
+
+.primary-cta a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.primary-cta:hover {
+  transform: scale(1.05);
+}
+
+.partner-cta-box {
+  margin: 32px 0px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 2px solid var(--accent-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.partner-buttons {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.secondary-cta {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  background: var(--button-gradient);
+  color: var(--primary-dark);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow);
+  font-size: var(--small-text);
+  transition: transform 0.2s ease;
+}
+
+.secondary-cta a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.secondary-cta:hover {
+  transform: scale(1.05);
+}
+
+.outline-cta {
+  padding: 16px 32px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--primary-dark);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow);
+  font-size: var(--small-text);
+  transition: transform 0.2s ease;
+}
+.outline-cta a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.outline-cta:hover {
+  transform: scale(1.05);
 }
