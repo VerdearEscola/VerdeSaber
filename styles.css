@@ -293,6 +293,7 @@ aside {
   align-items: center;
   justify-content: center;
   margin-top: 64px;
+  gap: 48px;
 }
 
 .about-us-image img {
@@ -378,7 +379,7 @@ footer {
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 80%;
   gap: 16px;
 }
@@ -518,7 +519,7 @@ h3 {
 }
 
 .primary-cta {
-  margin-top: 48px;
+  margin: 48px 0;
   padding: 16px 32px;
   border: none;
   border-radius: 8px;
@@ -600,4 +601,203 @@ h3 {
 
 .outline-cta:hover {
   transform: scale(1.05);
+}
+
+.plans-container {
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.plans-options {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  margin: 24px 0 72px 0;
+}
+
+.plans-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.plans-main-text {
+  margin-top: 64px;
+  font-size: var(--subtitle-text);
+  font-weight: bold;
+  color: var(--primary-light);
+}
+.plans-subtitle {
+  max-width: 600px;
+  margin: 16px auto 0 auto;
+  font-size: var(--info-text);
+}
+
+/* base comum para cada cartão de plano */
+.plan {
+  position: relative;
+  width: 360px;
+  min-height: 660px;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  border: 1px solid var(--accent-light);
+}
+
+/* topo do cartão: ícone + título curto */
+.plan .plan-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.plan .top-image {
+  background: var(--secondary-medium);
+  border-radius: 9999px;
+  padding: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan .top-image img {
+  width: 28px;
+  height: 28px;
+}
+
+/* títulos e preço */
+.plan .plan-title {
+  font-size: 22px;
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.plan .plan-subtitle {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.plan-price {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 6px;
+  color: var(--primary-dark);
+}
+
+.plan-price span {
+  font-size: 14px;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* lista de recursos */
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  text-align: left;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.plan-features li {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+}
+
+/* botões por variante */
+.plan-btn {
+  margin-top: auto;
+  width: calc(100% - 64px);
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* contorno claro (Gratuito) */
+.plan-btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-light);
+  color: var(--secondary);
+}
+
+/* botão principal (Educador) */
+.plan-btn-primary {
+  background: var(--button-gradient);
+  color: var(--white);
+}
+
+/* botão com degradê alternativo (Premium) */
+.plan-btn-gradient {
+  background: linear-gradient(90deg, #4f86b4 0%, #47a976 100%);
+  color: #fff;
+}
+
+/* hover estados */
+.plan:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Educator (destaque) */
+.plan-educator {
+  border: 2px solid var(--secondary);
+  box-shadow: 0 10px 30px rgba(71, 169, 118, 0.12);
+}
+
+/* badge "Mais Popular" */
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--secondary-light);
+  color: var(--secondary);
+  padding: 6px 18px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 6px 18px rgba(71, 149, 61, 0.06);
+}
+
+/* Premium: borda e leve destaque */
+.plan-premium {
+  border: 1px solid rgba(71, 149, 61, 0.18);
+  background: linear-gradient(180deg, #ffffff 0%, #f6fff3 100%);
+}
+
+/* responsividade simples */
+@media (max-width: 1100px) {
+  .plans-options {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .plan {
+    width: 90%;
+    max-width: 720px;
+  }
 }
