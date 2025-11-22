@@ -25,8 +25,9 @@
   /* RGB para usar com alfa (extraído de #46953d -> 70,149,61) */
   --text-gradient: linear-gradient(90deg, var(--primary-dark), var(--secondary-light));
 
-  --main-text: 48px;
-  --subtitle-text: 32px;
+  /* Ajuste de fontes para responsividade base */
+  --main-text: clamp(32px, 5vw, 48px);
+  --subtitle-text: clamp(24px, 4vw, 32px);
   --text: 24px;
   --info-text: 18px;
   --small-text: 14px;
@@ -43,12 +44,20 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Adicionado: Regra global para imagens não estourarem a tela */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  height: 72px;
+  justify-content: space-between; /* Alterado de space-around para melhor controle */
+  padding: 0 5%; /* Adicionado padding lateral */
+  min-height: 72px; /* Alterado de height fixa */
   background-color: var(--secondary-light);
+  flex-wrap: wrap; /* Permite quebra em telas muito pequenas */
 }
 
 .home-logo {
@@ -136,6 +145,10 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 0 5%; /* Adicionado padding lateral para telas grandes */
+  max-width: 1920px; /* Limite para monitores ultrawide */
+  margin: 0 auto; /* Centralizar em monitores grandes */
+  width: 100%;
 }
 
 .section-title {
@@ -162,11 +175,21 @@ aside {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 120px;
+  margin-top: 60px; /* Reduzido de 120px para ser mais flexível */
+  margin-bottom: 60px;
+  flex: 1; /* Ocupa espaço disponível */
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .image-container img {
-  margin-top: 80px;
+  margin-top: 0; /* Removido margin fixo */
+  max-height: 600px;
+  object-fit: contain;
 }
 
 .main-text {
@@ -174,19 +197,13 @@ aside {
 }
 
 .text-content {
-  max-width: 500px;
+  max-width: 100%; /* Alterado de 500px fixo */
 }
 
 .subtitle {
-  max-width: 550px;
+  max-width: 100%; /* Alterado de 550px fixo */
   font-size: var(--info-text);
-}
-
-.subtitle-text {
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  line-height: 1.5;
 }
 
 .action-buttons {
@@ -294,10 +311,12 @@ aside {
   justify-content: center;
   margin-top: 64px;
   gap: 48px;
+  width: 100%; /* Garante largura total */
 }
 
 .about-us-image img {
-  width: 660px;
+  width: 100%;
+  max-width: 660px; /* Limite máximo, mas flexível */
 }
 
 .about-us-text {
@@ -339,6 +358,8 @@ aside {
   align-items: center;
   justify-content: center;
   gap: 32px;
+  flex-wrap: wrap; /* Permite quebra de linha */
+  width: 100%;
 }
 
 .about-us-cta-content {
@@ -348,8 +369,10 @@ aside {
   justify-content: center;
   gap: 16px;
   max-width: 400px;
-  height: 250px;
-  border-radius: 16px;
+  height: auto; /* Alterado de height fixa 250px */
+  min-height: 250px; /* Garante altura mínima */
+  flex: 1;
+  min-width: 280px; /* Largura mínima para não esmagar */
   padding: 24px;
   border: 1px solid var(--secondary);
 }
@@ -380,8 +403,9 @@ footer {
 .footer-container {
   display: flex;
   justify-content: space-around;
-  width: 80%;
-  gap: 16px;
+  width: 90%; /* Aumentado de 80% */
+  gap: 32px;
+  flex-wrap: wrap; /* Permite quebra no footer */
 }
 .footer-container ul {
   list-style: none;
@@ -494,6 +518,8 @@ h3 {
   gap: 32px;
   margin-top: 48px;
   justify-content: center;
+  flex-wrap: wrap; /* Permite quebra dos cards */
+  width: 100%;
 }
 
 .card {
@@ -503,9 +529,12 @@ h3 {
   text-align: center;
   justify-content: center;
   gap: 16px;
-  max-width: 400px;
-  height: 250px;
   border-radius: 16px;
+  max-width: 400px;
+  height: auto; /* Alterado de height fixa */
+  min-height: 250px;
+  width: 100%; /* Flexível */
+  max-width: 350px; /* Limite */
   padding: 48px;
   border: 1px solid var(--accent-light);
 }
@@ -919,14 +948,125 @@ h3 {
   }
 }
 
-@media (max-width: 1100px) {
-  .plans-options {
-    flex-direction: column;
-    gap: 24px;
+/* Tablet e Laptops Pequenos (max-width: 1024px) */
+@media (max-width: 1024px) {
+  section {
+    flex-direction: column; /* Empilha o conteúdo das seções */
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  aside {
+    margin-top: 20px;
+    align-items: center; /* Centraliza itens do aside */
+  }
+
+  .section-title {
+    margin: 0 auto; /* Centraliza título da seção */
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+
+  .image-container img {
+    margin-top: 40px;
+    max-width: 80%;
+  }
+
+  .about-us-image {
+    flex-direction: column; /* Empilha imagem e texto do Sobre Nós */
+  }
+
+  .about-us-text {
+    text-align: center;
     align-items: center;
   }
+
+  .about-us-highlights {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .plans-options {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .login-area {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .login-area button {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .start-now,
+  .plans {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .statistics-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-us-cta-content {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* Formulário em uma coluna */
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quick-links,
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-us-footer {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
   .plan {
-    width: 90%;
-    max-width: 720px;
+    width: 100%;
   }
 }
