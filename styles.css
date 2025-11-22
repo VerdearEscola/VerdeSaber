@@ -764,7 +764,7 @@ h3 {
 
 /* Educator (destaque) */
 .plan-educator {
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--accent-light);
   box-shadow: 0 10px 30px rgba(71, 169, 118, 0.12);
 }
 
@@ -785,8 +785,38 @@ h3 {
 
 /* Premium: borda e leve destaque */
 .plan-premium {
-  border: 1px solid rgba(71, 149, 61, 0.18);
   background: linear-gradient(180deg, #ffffff 0%, #f6fff3 100%);
+}
+
+.donation-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.donation-cta button {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  background: var(--button-gradient);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow);
+  font-size: var(--small-text);
+  transition: transform 0.2s ease;
+}
+
+.donation-cta button a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.donation-cta button:hover {
+  transform: scale(1.05);
 }
 
 /* responsividade simples */
