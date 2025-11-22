@@ -9,33 +9,42 @@
   </head>
   <body>
     <nav>
-      <!-- ...existing code... -->
       <ul class="home-logo">
         <img src="./assets/icons/Sprout.png" />
         <li>Verde Saber</li>
       </ul>
-      <ul class="navbar-links">
-        <li>
-          <a href="">Inicio</a>
-        </li>
-        <li>
-          <a href="">Sobre Nós</a>
-        </li>
-        <li>
-          <a href="">Receitas</a>
-        </li>
-        <li>
-          <a href="">Planos</a>
-        </li>
-      </ul>
-      <ul class="login-area">
-        <li>
-          <button>
-            <a href="./login.html">Entrar</a>
-          </button>
-        </li>
-      </ul>
-      <!-- ...existing code... -->
+
+      <!-- Adicionado: Botão Hambúrguer -->
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <!-- Adicionado: Wrapper para o menu deslizante -->
+      <div class="nav-menu">
+        <ul class="navbar-links">
+          <li>
+            <a href="">Inicio</a>
+          </li>
+          <li>
+            <a href="">Sobre Nós</a>
+          </li>
+          <li>
+            <a href="">Receitas</a>
+          </li>
+          <li>
+            <a href="">Planos</a>
+          </li>
+        </ul>
+        <ul class="login-area">
+          <li>
+            <button>
+              <a href="./login.html">Entrar</a>
+            </button>
+          </li>
+        </ul>
+      </div>
     </nav>
     <section class="hero-section">
       <aside>
@@ -362,5 +371,22 @@
         <p>© 2024 Verde Saber. Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <!-- Adicionado: Script para controlar o menu -->
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Fecha o menu ao clicar em um link
+      document.querySelectorAll(".navbar-links li a").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }));
+    </script>
   </body>
 </html>

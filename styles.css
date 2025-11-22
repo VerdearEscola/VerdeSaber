@@ -57,7 +57,16 @@ nav {
   padding: 0 5%; /* Adicionado padding lateral */
   min-height: 72px; /* Alterado de height fixa */
   background-color: var(--secondary-light);
-  flex-wrap: wrap; /* Permite quebra em telas muito pequenas */
+  position: relative; /* Necessário para z-index funcionar bem */
+  z-index: 100;
+}
+
+/* Adicionado: Container para agrupar links e login no Desktop */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1; /* Ocupa o espaço restante entre o logo e o fim da tela */
 }
 
 .home-logo {
@@ -70,11 +79,29 @@ nav {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Adicionado: Estilos do Hambúrguer (escondido no desktop) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--primary-dark);
+  border-radius: 2px;
+}
+
 .navbar-links {
   display: flex;
   list-style: none;
   text-decoration: none;
   gap: 24px;
+  margin: 0 auto; /* Centraliza a lista de links dentro do nav-menu */
 }
 
 .navbar-links li a {
@@ -375,6 +402,7 @@ aside {
   min-width: 280px; /* Largura mínima para não esmagar */
   padding: 24px;
   border: 1px solid var(--secondary);
+  border-radius: 16px;
 }
 
 .about-us-cta-content img {
@@ -996,77 +1024,75 @@ h3 {
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Ajuste na Nav para não quebrar linha e manter o botão visível */
   nav {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 72px;
+  }
+
+  /* Mostrar o botão hambúrguer */
+  .hamburger {
+    display: block;
+    z-index: 1001; /* Fica acima do menu */
+  }
+
+  /* Animação do ícone hambúrguer virando X */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* O Menu Lateral (Gaveta) */
+  .nav-menu {
+    position: fixed;
+    right: -100%; /* Começa fora da tela */
+    top: 0; /* Alterado de 72px para 0 para cobrir tudo se quiser, ou 72px para ficar abaixo da barra */
+    top: 72px; /* Fica abaixo da barra de navegação */
     flex-direction: column;
-    height: auto;
-    padding: 16px;
-    gap: 16px;
+    background-color: var(--white); /* Fundo branco para leitura */
+    width: 70%; /* Largura do menu */
+    height: calc(100vh - 72px); /* Altura total menos a barra */
+    text-align: center;
+    transition: 0.3s; /* Animação suave */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Sombra na esquerda */
+    padding-top: 40px;
+    gap: 40px;
+    z-index: 999;
+  }
+
+  /* Classe ativa que traz o menu para a tela */
+  .nav-menu.active {
+    right: 0;
   }
 
   .navbar-links {
     flex-direction: column;
-    gap: 12px;
-    text-align: center;
+    gap: 32px;
     width: 100%;
   }
 
   .navbar-links li {
     width: 100%;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0;
+    border: none;
+  }
+
+  .navbar-links li a {
+    font-size: 18px; /* Texto maior no mobile */
   }
 
   .login-area {
     width: 100%;
     justify-content: center;
+    margin-bottom: 40px;
   }
 
-  .login-area button {
-    width: 100%;
-  }
-
-  .action-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .start-now,
-  .plans {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .statistics-container {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .about-us-cta-content {
-    width: 100%;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr; /* Formulário em uma coluna */
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .quick-links,
-  .contact-info {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-us-footer {
-    text-align: center;
-    margin-bottom: 24px;
-  }
-
-  .plan {
-    width: 100%;
-  }
+  /* ...existing code... */
 }
