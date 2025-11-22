@@ -280,7 +280,55 @@
         <button>Quero Doar para um escola</button>
       </div>
     </section>
+    <section>
+      <div class="signup-section">
+        <h2>Cadastre sua Escola</h2>
+        <p class="signup-subtitle">Preencha o formulário e comece a transformar sua escola hoje mesmo</p>
 
+        <form class="signup-form" action="#" method="post" novalidate>
+          <div class="form-grid">
+            <div class="form-field full">
+              <label for="school">Nome da Escola *</label>
+              <input id="school" name="school" type="text" placeholder="Ex: Escola Municipal João Silva" required />
+            </div>
+
+            <div class="form-field full">
+              <label for="responsible">Nome do Responsável *</label>
+              <input id="responsible" name="responsible" type="text" placeholder="Ex: Maria Santos" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" placeholder="escola@exemplo.com" required />
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Telefone *</label>
+              <input id="phone" name="phone" type="tel" placeholder="(11) 98765-4321" required />
+            </div>
+
+            <div class="form-field full">
+              <label for="plan">Plano de Interesse *</label>
+              <select id="plan" name="plan" required>
+                <option value="">Selecione um plano</option>
+                <option value="gratuito">Gratuito</option>
+                <option value="educador">Educador</option>
+                <option value="premium">Premium</option>
+              </select>
+            </div>
+
+            <div class="form-field full">
+              <label for="message">Mensagem (Opcional)</label>
+              <textarea id="message" name="message" rows="4" placeholder="Conte-nos mais sobre sua escola e suas expectativas..."></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Enviar Cadastro</button>
+          </div>
+        </form>
+      </div>
+    </section>
     <footer>
       <span class="footer-container">
         <div>
