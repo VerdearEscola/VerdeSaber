@@ -100,11 +100,8 @@ if (form) {
         }
       }
     } else {
-      // Se estiver tudo válido, envia os dados via Formspree
-
-      // ⚠️ IMPORTANTE: Substitua a URL abaixo pelo seu endpoint do Formspree
-      // Crie uma conta em https://formspree.io/ e crie um novo formulário para obter seu código.
-      const formAction = "https://formspree.io/f/SEU_CODIGO_AQUI";
+      // Envio do formulário via Fetch API para Formspree
+      const formAction = "https://formspree.io/f/xgvqprdb";
 
       fetch(formAction, {
         method: "POST",
