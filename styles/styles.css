@@ -44,6 +44,12 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* Ajuste este valor conforme a altura do seu menu de navegação para não cobrir o título */
+  scroll-padding-top: 100px;
+}
+
 /* Adicionado: Regra global para imagens não estourarem a tela */
 img {
   max-width: 100%;

@@ -22,6 +22,7 @@ const form = document.getElementById("start-now");
 if (form) {
   const emailInput = document.getElementById("email");
   const phoneInput = document.getElementById("phone");
+  const messageInput = document.getElementById("message");
 
   // Formatação do Telefone em tempo real (Máscara)
   phoneInput.addEventListener("input", (e) => {
@@ -70,18 +71,30 @@ if (form) {
     let isValid = true;
     let errorMessage = "";
 
-    // Verifica se o formulário é válido baseado nos atributos 'required' e tipos dos inputs
-    if (!form.checkValidity()) {
+    // Validação detalhada
+    if (emailInput.validity.valueMissing) {
       isValid = false;
-      errorMessage = "Por favor, preencha todos os campos obrigatórios corretamente.";
+      errorMessage = "O campo de e-mail é obrigatório.";
+      emailInput.focus();
     } else if (!emailRegex.test(email)) {
       isValid = false;
-      errorMessage = "Por favor, insira um email válido.";
+      errorMessage = "O e-mail inserido não é válido. Verifique se digitou corretamente (ex: nome@exemplo.com).";
       emailInput.focus();
+    } else if (phoneInput.validity.valueMissing) {
+      isValid = false;
+      errorMessage = "O campo de telefone é obrigatório.";
+      phoneInput.focus();
     } else if (!phoneRegex.test(phone)) {
       isValid = false;
-      errorMessage = "Por favor, insira um telefone válido (ex: (11) 99999-9999).";
+      errorMessage = "O número de telefone está incorreto. Use o formato (DD) 99999-9999.";
       phoneInput.focus();
+    } else if (messageInput.validity.valueMissing) {
+      isValid = false;
+      errorMessage = "Por favor, escreva uma mensagem.";
+      messageInput.focus();
+    } else if (!form.checkValidity()) {
+      isValid = false;
+      errorMessage = "Por favor, preencha todos os campos obrigatórios corretamente.";
     }
 
     if (!isValid) {

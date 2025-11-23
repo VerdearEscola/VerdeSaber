@@ -8,13 +8,6 @@
     <!-- Importação do SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Verde Saber</title>
-    <style>
-      html {
-        scroll-behavior: smooth;
-        /* Ajuste este valor conforme a altura do seu menu de navegação para não cobrir o título */
-        scroll-padding-top: 100px;
-      }
-    </style>
   </head>
   <body>
     <nav>
@@ -336,8 +329,8 @@
               </select>
             </div>
             <div class="form-field full">
-              <label for="message">Mensagem (Opcional)</label>
-              <textarea id="message" name="message" rows="3" placeholder="Conte um pouco sobre o espaço disponível..."></textarea>
+              <label for="message">Mensagem *</label>
+              <textarea id="message" name="message" rows="3" placeholder="Conte um pouco sobre o espaço disponível..." required></textarea>
             </div>
           </div>
           <div class="form-actions">
