@@ -278,6 +278,11 @@ aside {
   transition: transform 0.2s ease;
 }
 
+.plans a {
+  text-decoration: none;
+  color: var(--black);
+}
+
 .plans:hover {
   transform: scale(1.05);
 }
@@ -953,7 +958,7 @@ h3 {
   width: 320px;
   max-width: 100%;
   padding: 12px 20px;
-  border-radius: 24px;
+  border-radius: 8px;
   border: none;
   background: var(--button-gradient);
   color: var(--white);

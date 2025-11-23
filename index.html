@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/icons/Sprout.png" />
     <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- Importação do SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Verde Saber</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        /* Ajuste este valor conforme a altura do seu menu de navegação para não cobrir o título */
+        scroll-padding-top: 100px;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -25,16 +34,17 @@
       <div class="nav-menu">
         <ul class="navbar-links">
           <li>
-            <a href="begin">Inicio</a>
+            <a href="#begin">Inicio</a>
           </li>
           <li>
-            <a href="about-us">Sobre Nós</a>
+            <a href="#about-us">Sobre Nós</a>
           </li>
           <li>
-            <a href="recipes">Receitas</a>
+            <!-- Alert do Menu Receitas -->
+            <a href="#recipes" onclick="Swal.fire({ title: 'Em construção!', text: 'A página de receitas estará disponível em breve.', icon: 'info', confirmButtonColor: '#2e7d32' })">Receitas</a>
           </li>
           <li>
-            <a href="area-plans">Planos</a>
+            <a href="#area-plans">Planos</a>
           </li>
         </ul>
         <ul class="login-area">
@@ -58,8 +68,8 @@
         </div>
         <p class="subtitle">Eduque crianças sobre sustentabilidade enquanto cria espaços verdes inovadores. Hortas verticais que economizam espaço, reduzem custos e inspiram uma nova geração.</p>
         <div class="action-buttons">
-          <button class="start-now"><a href="start-now">Começar Agora</a> <img src="./assets/icons/right-arrow.png" alt="" /></button>
-          <button class="plans">Ver Planos</button>
+          <button class="start-now"><a href="#start-now">Começar Agora</a> <img src="./assets/icons/right-arrow.png" alt="" /></button>
+          <button class="plans"><a href="#area-plans">Ver Planos</a></button>
         </div>
         <div class="statistics-container">
           <span class="statistics">
@@ -167,36 +177,26 @@
 
         <!-- Para Empresas Parceiras -->
         <div class="benefit-block">
-          <img src="./assets/icons/heart.png" alt="ícone parceiros" class="benefit-icon" />
-          <h2 class="benefit-title">Para Empresas Parceiras</h2>
-          <p class="benefit-desc">Apoie a educação e ganhe visibilidade positiva. Sua empresa pode fazer a diferença na vida de centenas de estudantes.</p>
-
-          <div class="cards-row">
-            <article class="card">
-              <img style="width: 40px;" src="./assets/icons/heart.png" alt="responsabilidade social" />
-              <h3>Responsabilidade Social</h3>
-              <p>Contribua para a educação e desenvolvimento da comunidade</p>
-            </article>
-
-            <article class="card">
-              <img style="width: 40px;" src="./assets/icons/arrow.png" alt="visibilidade positiva" />
-              <h3>Visibilidade Positiva</h3>
-              <p>Sua marca associada a projetos educacionais e sustentáveis</p>
-            </article>
-
-            <article class="card">
-              <img style="width: 40px;" src="./assets/icons/building.png" alt="impacto real" />
-              <h3>Impacto Real</h3>
-              <p>Veja o resultado direto do seu investimento na educação</p>
-            </article>
-          </div>
+          <img src="./assets/icons/heart.png" alt="Parceria" style="width: 48px; margin-bottom: 16px;" />
+          <p class="benefit-title">Para Empresas Parceiras</p>
+          <p class="benefit-desc">Conecte sua marca a um propósito real. Patrocine escolas, receba relatórios de impacto ESG e engaje seus colaboradores.</p>
 
           <div class="partner-cta-box">
-            <h4>Como sua empresa pode ajudar?</h4>
+            <h3>Como sua empresa pode ajudar?</h3>
             <p>Patrocine uma horta escolar e receba relatórios de impacto, fotos do projeto e reconhecimento em eventos escolares.</p>
             <div class="partner-buttons">
-              <button class="secondary-cta"><a href="#">Seja um Parceiro</a></button>
-              <button class="outline-cta"><a href="#">Saiba Mais</a></button>
+              <button
+                class="secondary-cta"
+                onclick="Swal.fire({ title: 'Seja um Parceiro!', text: 'Envie um email para parcerias@verdesaber.com.br para iniciarmos essa jornada.', icon: 'success', confirmButtonColor: '#2e7d32' })"
+              >
+                Seja um Parceiro
+              </button>
+              <button
+                class="outline-cta"
+                onclick="Swal.fire({ title: 'Material Institucional', text: 'Nosso Mídia Kit com detalhes do projeto estará disponível para download em breve.', icon: 'info', confirmButtonColor: '#2e7d32' })"
+              >
+                Saiba Mais
+              </button>
             </div>
           </div>
         </div>
@@ -228,7 +228,10 @@
             <li><img src="./assets/icons/arrow.png" style="width: 20px;" alt="" />Guia de plantio básico</li>
           </ul>
 
-          <button class="plan-btn plan-btn-outline">Começar Grátis</button>
+          <!-- Alert do Plano Gratuito -->
+          <button class="plan-btn plan-btn-outline" onclick="Swal.fire({ title: 'Em breve!', text: 'A contratação online estará disponível em breve.', icon: 'info', confirmButtonColor: '#2e7d32' })">
+            Começar Grátis
+          </button>
         </article>
 
         <!-- Plano Educador (Mais Popular) -->
@@ -255,7 +258,10 @@
             <li><img src="./assets/icons/arrow.png" style="width: 20px;" alt="" />Acesso a novo conteudos</li>
           </ul>
 
-          <button class="plan-btn plan-btn-primary">Escolher Educador</button>
+          <!-- Alert do Plano Educador -->
+          <button class="plan-btn plan-btn-primary" onclick="Swal.fire({ title: 'Em breve!', text: 'A contratação online estará disponível em breve.', icon: 'info', confirmButtonColor: '#2e7d32' })">
+            Escolher Educador
+          </button>
         </article>
 
         <!-- Plano Premium -->
@@ -282,12 +288,19 @@
             <li><img src="./assets/icons/arrow.png" style="width: 20px;" alt="" />Selo Premium de sustentabilidade</li>
           </ul>
 
-          <button class="plan-btn plan-btn-gradient">Quero o Premium</button>
+          <!-- Alert do Plano Premium -->
+          <button class="plan-btn plan-btn-gradient" onclick="Swal.fire({ title: 'Em breve!', text: 'A contratação online estará disponível em breve.', icon: 'info', confirmButtonColor: '#2e7d32' })">
+            Quero o Premium
+          </button>
         </article>
       </section>
       <div class="donation-cta">
         <p>Empresas e ONGs que desejam patrocinar escolas parceiras</p>
-        <button>Quero Doar para um escola</button>
+        <button
+          onclick="Swal.fire({ title: 'Agradecemos seu interesse!', text: 'Entre em contato conosco pelo email contato@verdesaber.com.br para mais informações.', icon: 'success', confirmButtonColor: '#2e7d32' })"
+        >
+          Quero Doar para uma escola
+        </button>
       </div>
     </section>
     <section>
@@ -298,43 +311,34 @@
         <form class="signup-form" action="#" id="start-now" method="post" novalidate>
           <div class="form-grid">
             <div class="form-field full">
-              <label for="school">Nome da Escola *</label>
-              <input id="school" name="school" type="text" placeholder="Ex: Escola Municipal João Silva" required />
+              <label for="school-name">Nome da Escola</label>
+              <input type="text" id="school-name" name="school-name" placeholder="Ex: Escola Municipal..." required />
             </div>
-
-            <div class="form-field full">
-              <label for="responsible">Nome do Responsável *</label>
-              <input id="responsible" name="responsible" type="text" placeholder="Ex: Maria Santos" required />
-            </div>
-
             <div class="form-field">
-              <label for="email">Email *</label>
-              <input id="email" name="email" type="email" placeholder="escola@exemplo.com" required />
+              <label for="director-name">Nome do Diretor(a)</label>
+              <input type="text" id="director-name" name="director-name" placeholder="Seu nome completo" required />
             </div>
-
             <div class="form-field">
-              <label for="phone">Telefone *</label>
-              <input id="phone" name="phone" type="tel" placeholder="(11) 98765-4321" required />
+              <label for="email">Email Institucional</label>
+              <input type="email" id="email" name="email" placeholder="contato@escola.com" required />
             </div>
-
-            <div class="form-field full">
-              <label for="plan">Plano de Interesse *</label>
-              <select id="plan" name="plan" required>
-                <option value="">Selecione um plano</option>
-                <option value="gratuito">Gratuito</option>
-                <option value="educador">Educador</option>
-                <option value="premium">Premium</option>
-              </select>
+            <div class="form-field">
+              <label for="phone">Telefone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required />
             </div>
-
             <div class="form-field full">
               <label for="message">Mensagem (Opcional)</label>
-              <textarea id="message" name="message" rows="4" placeholder="Conte-nos mais sobre sua escola e suas expectativas..."></textarea>
+              <textarea id="message" name="message" rows="3" placeholder="Conte um pouco sobre o espaço disponível..."></textarea>
             </div>
           </div>
-
           <div class="form-actions">
-            <button type="submit" class="btn-submit">Enviar Cadastro</button>
+            <button
+              type="button"
+              class="btn-submit"
+              onclick="Swal.fire({ title: 'Pré-cadastro realizado!', text: 'Recebemos seus dados com sucesso. Nossa equipe entrará em contato em até 48h.', icon: 'success', confirmButtonColor: '#2e7d32' })"
+            >
+              Cadastre sua Escola
+            </button>
           </div>
         </form>
       </div>
@@ -352,17 +356,15 @@
         <div>
           <ul class="quick-links">
             <li>Links Rápidos</li>
-            <li><a href="">Sobre Nós</a></li>
-            <li><a href="">Planos</a></li>
-            <li><a href="">Cadastro</a></li>
+            <li><a href="#about-us">Sobre Nós</a></li>
+            <li><a href="#area-plans">Planos</a></li>
+            <li><a href="./login.html">Cadastro</a></li>
           </ul>
         </div>
         <div>
           <ul class="contact-info">
             <li>contato</li>
-            <li>
-              <a href="" type="mailto:"> <img src="./assets/icons/mail.png" alt="" />contato@verdesaber.com.br </a>
-            </li>
+            <li><img src="./assets/icons/mail.png" alt="" />contato@verdesaber.com.br</li>
           </ul>
         </div>
       </span>
