@@ -1033,61 +1033,60 @@ h3 {
   .hamburger {
     display: block;
     z-index: 1001;
+  }
 
-    /* Animação do ícone hambúrguer virando X */
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
+  /* Animação do ícone hambúrguer virando X */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 
-    /* O Menu Lateral (Gaveta) */
-    .nav-menu {
-      position: fixed;
-      right: -100%;
-      top: 0;
-      top: 72px;
-      flex-direction: column;
-      background-color: var(--white);
-      width: 70%;
-      height: calc(100vh - 72px);
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-      padding-top: 40px;
-      gap: 40px;
-      z-index: 999;
-    }
+  /* O Menu Lateral (Gaveta) */
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 72px;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 70%;
+    height: calc(100vh - 72px);
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding-top: 40px;
+    gap: 40px;
+    z-index: 999;
+  }
 
-    /* Classe ativa que traz o menu para a tela */
-    .nav-menu.active {
-      right: 0;
-    }
+  /* Classe ativa que traz o menu para a tela */
+  .nav-menu.active {
+    right: 0;
+  }
 
-    .navbar-links {
-      flex-direction: column;
-      gap: 32px;
-      width: 100%;
-    }
+  .navbar-links {
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+  }
 
-    .navbar-links li {
-      width: 100%;
-      padding: 0;
-      border: none;
-    }
+  .navbar-links li {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
 
-    .navbar-links li a {
-      font-size: 18px;
-    }
+  .navbar-links li a {
+    font-size: 18px;
+  }
 
-    .login-area {
-      width: 100%;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
+  .login-area {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
   }
 }

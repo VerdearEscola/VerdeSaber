@@ -25,16 +25,16 @@
       <div class="nav-menu">
         <ul class="navbar-links">
           <li>
-            <a href="">Inicio</a>
+            <a href="begin">Inicio</a>
           </li>
           <li>
-            <a href="">Sobre Nós</a>
+            <a href="about-us">Sobre Nós</a>
           </li>
           <li>
-            <a href="">Receitas</a>
+            <a href="recipes">Receitas</a>
           </li>
           <li>
-            <a href="">Planos</a>
+            <a href="area-plans">Planos</a>
           </li>
         </ul>
         <ul class="login-area">
@@ -48,7 +48,7 @@
     </nav>
     <section class="hero-section">
       <aside>
-        <div class="section-title">
+        <div class="section-title" id="begin">
           <img src="./assets/icons/leaf.png" alt="" />
           <span>Sustentabilidade na Educação</span>
         </div>
@@ -58,7 +58,7 @@
         </div>
         <p class="subtitle">Eduque crianças sobre sustentabilidade enquanto cria espaços verdes inovadores. Hortas verticais que economizam espaço, reduzem custos e inspiram uma nova geração.</p>
         <div class="action-buttons">
-          <button class="start-now"><a href="">Começar Agora</a> <img src="./assets/icons/right-arrow.png" alt="" /></button>
+          <button class="start-now"><a href="start-now">Começar Agora</a> <img src="./assets/icons/right-arrow.png" alt="" /></button>
           <button class="plans">Ver Planos</button>
         </div>
         <div class="statistics-container">
@@ -81,7 +81,7 @@
       </div>
     </section>
     <section class="about-us">
-      <div class="about-us-content">
+      <div class="about-us-content" id="about-us">
         <p class="about-us-main">Quem somos</p>
         <p class="about-us-info">Estudantes do projeto Transforme-se do Serasa, unidos por um propósito: tornar a educação mais sustentável e acessível</p>
       </div>
@@ -202,7 +202,7 @@
         </div>
       </div>
     </section>
-    <section class="plans-container">
+    <section class="plans-container" id="area-plans">
       <div class="plans-content">
         <p class="plans-main-text">Escolha Seu Plano</p>
         <p class="plans-subtitle">Soluções flexíveis para escolas de todos os tamanhos. Comece grátis e evolua conforme suas necessidades.</p>
@@ -295,7 +295,7 @@
         <h2>Cadastre sua Escola</h2>
         <p class="signup-subtitle">Preencha o formulário e comece a transformar sua escola hoje mesmo</p>
 
-        <form class="signup-form" action="#" method="post" novalidate>
+        <form class="signup-form" action="#" id="start-now" method="post" novalidate>
           <div class="form-grid">
             <div class="form-field full">
               <label for="school">Nome da Escola *</label>
