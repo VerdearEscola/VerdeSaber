@@ -322,9 +322,18 @@
               <label for="email">Email Institucional</label>
               <input type="email" id="email" name="email" placeholder="contato@escola.com" required />
             </div>
-            <div class="form-field">
+            <div class="form-field full">
               <label for="phone">Telefone / WhatsApp</label>
               <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required />
+            </div>
+            <div class="form-field full">
+              <label for="plan">Plano de Interesse *</label>
+              <select id="plan" name="plan" required>
+                <option value="">Selecione um plano</option>
+                <option value="gratuito">Gratuito</option>
+                <option value="educador">Educador</option>
+                <option value="premium">Premium</option>
+              </select>
             </div>
             <div class="form-field full">
               <label for="message">Mensagem (Opcional)</label>
@@ -332,13 +341,8 @@
             </div>
           </div>
           <div class="form-actions">
-            <button
-              type="button"
-              class="btn-submit"
-              onclick="Swal.fire({ title: 'Pré-cadastro realizado!', text: 'Recebemos seus dados com sucesso. Nossa equipe entrará em contato em até 48h.', icon: 'success', confirmButtonColor: '#2e7d32' })"
-            >
-              Cadastre sua Escola
-            </button>
+            <!-- Alterado: type="submit" e removido o onclick inline para que o script de validação funcione -->
+            <button type="submit" class="btn-submit">Cadastre sua Escola</button>
           </div>
         </form>
       </div>
@@ -374,21 +378,7 @@
       </div>
     </footer>
 
-    <!-- Adicionado: Script para controlar o menu -->
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      });
-
-      // Fecha o menu ao clicar em um link
-      document.querySelectorAll(".navbar-links li a").forEach(n => n.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-      }));
-    </script>
+    <!-- Script principal -->
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
