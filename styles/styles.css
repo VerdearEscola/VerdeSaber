@@ -670,7 +670,7 @@ h3 {
 }
 
 .plans-container {
-  margin-top: 64px;
+  margin-top: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -695,7 +695,7 @@ h3 {
 }
 
 .plans-main-text {
-  margin-top: 64px;
+  /* margin-top: 64px; */
   font-size: var(--subtitle-text);
   font-weight: bold;
   color: var(--primary-light);
