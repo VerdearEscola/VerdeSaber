@@ -631,7 +631,7 @@ h3 {
   border: none;
   border-radius: 8px;
   background: var(--button-gradient);
-  color: var(--primary-dark);
+  color: var(--white);
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 6px var(--shadow);
