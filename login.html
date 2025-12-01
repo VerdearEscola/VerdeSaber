@@ -55,6 +55,30 @@
               <label for="reg-confirm">Confirmar senha</label>
               <input type="password" id="reg-confirm" placeholder="********" required />
             </div>
+            <div>
+              <input type="checkbox" id="terms" required />
+              <label for="terms">Eu aceito os <a href="#" id="open-terms">termos e condições</a></label>
+
+              <!-- Modal Structure -->
+              <div id="terms-modal" class="modal">
+                <div class="modal-content">
+                  <span class="close-modal">&times;</span>
+                  <h2>Termos e Condições</h2>
+                  <div class="modal-body">
+                    <p>Bem-vindo ao Verdesaber. Ao utilizar nossos serviços, você concorda com os seguintes termos:</p>
+                    <h3>1. Aceitação dos Termos</h3>
+                    <p>Ao criar uma conta, você concorda em cumprir estes termos de serviço e todas as leis e regulamentos aplicáveis.</p>
+                    <h3>2. Uso do Serviço</h3>
+                    <p>O serviço deve ser utilizado para fins educacionais e de promoção da sustentabilidade. É proibido o uso para atividades ilegais ou não autorizadas.</p>
+                    <h3>3. Privacidade</h3>
+                    <p>Respeitamos sua privacidade. Seus dados pessoais serão protegidos e utilizados apenas para melhorar sua experiência na plataforma.</p>
+                    <h3>4. Responsabilidades</h3>
+                    <p>O usuário é responsável por manter a confidencialidade de sua conta e senha. A Verdesaber não se responsabiliza por perdas decorrentes do uso não autorizado de sua conta.</p>
+                  </div>
+                  <button type="button" class="action-btn modal-btn" id="accept-terms-btn">Li e Concordo</button>
+                </div>
+              </div>
+            </div>
             <button type="submit" class="action-btn">Criar Conta</button>
             <a href="./index.html" class="back-link">Voltar para o início</a>
           </form>
@@ -62,28 +86,6 @@
       </div>
     </div>
 
-    <script>
-      const tabLogin = document.getElementById('tab-login');
-      const tabRegister = document.getElementById('tab-register');
-      const formLogin = document.getElementById('form-login');
-      const formRegister = document.getElementById('form-register');
-      const toggleBg = document.querySelector('.toggle-bg');
-
-      tabLogin.addEventListener('click', () => {
-        tabLogin.classList.add('active');
-        tabRegister.classList.remove('active');
-        formLogin.classList.add('active');
-        formRegister.classList.remove('active');
-        toggleBg.style.left = '4px'; // Move background to left
-      });
-
-      tabRegister.addEventListener('click', () => {
-        tabRegister.classList.add('active');
-        tabLogin.classList.remove('active');
-        formRegister.classList.add('active');
-        formLogin.classList.remove('active');
-        toggleBg.style.left = '50%'; // Move background to right
-      });
-    </script>
+    <script src="./scripts/login.js"></script>
   </body>
 </html>
